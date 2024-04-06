@@ -1,0 +1,198 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+.center_content {
+    width: 45%;
+    margin: auto;
+    box-sizing: border-box;
+}
+.fix_ul {
+    list-style: none;
+}
+.header_background {
+    background-color: rgb(32,21,0);
+    color: white;
+}
+header h1 {
+    padding-top: 70px;
+}
+header small {
+    font-size: 55%;
+    color: gray;
+}
+.flex_menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: auto;
+    width: 60%;
+}
+header ul {
+    margin: 0 200px;
+    padding: 50px 0;
+}
+header a {
+    text-decoration: none;
+    color: white;
+    font-size: 70%;
+}
+.pink_background_header {
+    background-color: rgb(180, 42,71);
+    padding: 10px 15px;
+}
+.orange_background {
+    background-color: rgb(209, 80, 32);
+}
+.orange_background div {
+    padding: 100px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+.white_background_div {
+    padding: 50px 0;
+    display: flex;
+    flex-direction: column;
+}
+.pink_background_main {
+    background-color: rgb(180, 42,71);
+    padding: 15px 20px;
+}
+.flex_box_3 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: auto;
+    width: 95%;
+    gap: 50px;
+}
+.box_3 {
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+    justify-content: space-between;
+}
+.flex_box_4 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: auto;
+    gap: 20px;
+    padding-top: 40px;
+}
+.box_4 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.footer_background {
+    background-color: rgb(46, 21, 0);
+    color: gray;
+}
+footer div {
+    padding: 100px 0 60px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: auto;
+    gap: 70px;
+}
+.flex_footer {
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+    gap: 5px;
+    text-transform: uppercase;
+    font-size: 60%;
+}
+.flex_footer_icons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: auto;
+    width: 30%;
+    color: white;
+}
+footer a {
+    text-decoration: none;
+    color: gray;
+}
+footer p {
+    text-transform: uppercase;
+    font-size: 80%;
+}
+main a {
+    text-decoration: none;
+    color: white;
+    font-size: 75%;
+    margin: auto;
+}
+main i {
+    padding: 15px;
+    color: rgb(78, 24, 6);
+}
+a, small {
+    text-transform: uppercase;
+}
+h2 {
+    font-size: 170%;
+}
+h3 {
+    font-size: 110%;
+    text-transform: uppercase;
+}
+.orange_background p {
+    width: 85%;
+    margin: auto;
+    color: rgb(24, 24, 24);
+    font-size: 80%;
+    line-height: 200%;
+}
+.white_background_div small {
+    font-size: 75%;
+    color: gray;
+}
+.flex_box_3 p {
+    font-size: 80%;
+    line-height: 200%;
+}
+.box_3 p {
+    font-size: 70%;
+    line-height: 200%;
+}
+.box_4 p {
+    color: gray;
+    font-size: 70%;
+    padding: 10px 0 30px 0;
+    line-height: 200%
+}
+.box_4 h5 {
+    text-transform: uppercase;
+    font-size: 70%;
+}
+header h1::first-letter {
+    text-transform: uppercase;
+}
+.orange_background h2::first-letter {
+    text-transform: uppercase;
+}
+.white_background_div h2::first-letter {
+    text-transform: uppercase;
+}
+header small span, .flex_footer span {
+    color: white;
+}
+#bold {
+    color: black;
+    font-weight: bold;
+}
+#underline {
+    color: black;
+    text-decoration: underline;
+}
+#margin_top {
+    margin-top: 80px;
+}

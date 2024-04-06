@@ -1,0 +1,203 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Gill Sans, sans-serif;
+  list-style: none;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+.display_area {
+  margin: auto;
+  width: 1200px;
+}
+.flex_row {
+  display: flex;
+  flex-direction: row;
+}
+.flex_column {
+  display: flex;
+  flex-direction: column;
+}
+.overall_bg {
+  background-color: rgb(32, 32, 32);
+}
+header {
+  background-image: url(../images/banner.jpg);
+  background-position: center;
+  height: 480px;
+  background-repeat: no-repeat;
+}
+.header_presentation {
+  text-align: center;
+  gap: 50px;
+  position: relative;
+  top: 139px;
+}
+header nav {
+  margin: auto;
+}
+.section_1 {
+  padding: 30px 30px 80px 30px;
+  gap: 30px;
+  background-color: white;
+}
+.harbor_dp {
+  width: 700px;
+}
+.harbor_dp_title {
+  padding-bottom: 30px;
+}
+.harbor_dp figure {
+  padding-bottom: 20px;
+}
+.harbor_dp_text {
+  gap: 10px;
+}
+.section_1_posts {
+  padding-top: 10px;
+  height: 483;
+  justify-content: space-between;
+}
+.section_1_posts ul {
+  height: 420px;
+  justify-content: space-between;
+}
+.section_1_posts ul li {
+  border-bottom: 2px solid rgb(236, 236, 236);
+}
+.section_1_posts ul div {
+  padding: 20px 0;
+  gap: 20px;
+}
+.section_1_posts ul li div p {
+  height: 70px;
+  line-height: 170%;
+}
+.section_2 {
+  background-color: rgb(236, 236, 236);
+  padding: 80px 30px;
+}
+.section_2 ul {
+  justify-content: space-between;
+}
+.section_2 ul li {
+  gap: 40px;
+}
+.section_2 ul li div {
+  gap: 20px;
+  width: 314px;
+}
+footer div {
+  padding: 60px 30px 40px 30px;
+}
+.footer_outer_ul {
+  justify-content: space-between;
+}
+.footer_outer_ul li {
+  width: 314px;
+  gap: 20px;
+}
+.footer_inner_ul li {
+  border-bottom: 2px solid rgb(64, 64, 64);
+  padding: 10px 0;
+}
+header h1,
+.section_2 a,
+footer h3 {
+  color: white;
+}
+header h1,
+header p,
+header a,
+.harbor_dp_title h2,
+.section_1_posts h3,
+.comments,
+.section_2 h2,
+.section_2 a,
+footer h3 {
+  text-transform: uppercase;
+}
+header h1 {
+  font-size: 400%;
+}
+header p,
+header a {
+  color: gray;
+}
+header p {
+  font-size: 95%;
+}
+header a {
+  font-size: 90%;
+}
+.harbor_dp_title h2,
+.harbor_dp_title p,
+.harbor_dp_text,
+.section_1_posts h3,
+.aside_description,
+.section_2 h2,
+.section_2 p {
+  color: rgb(56, 56, 56);
+}
+.harbor_dp_title h2 {
+  font-size: 250%;
+}
+.harbor_dp_title h2,
+.harbor_dp_title p,
+.harbor_dp_text,
+.section_1_posts h3,
+.aside_description,
+.section_2 h2,
+.section_2 p,
+.section_2 a,
+footer h3,
+header p,
+header a,
+header h1 {
+  font-weight: bold;
+}
+.harbor_dp_text {
+  font-size: 90%;
+}
+.comments,
+.footer_inner_ul p {
+  color: rgb(132, 132, 132);
+}
+.comments {
+  font-size: 70%;
+}
+.aside_description {
+  font-size: 90%;
+}
+.section_2 h2 {
+  font-size: 110%;
+}
+.harbor_dp_text,
+.section_2 p {
+  line-height: 160%;
+}
+.section_2 p {
+  font-size: 85%;
+}
+.section_2 a {
+  font-size: 95%;
+}
+footer h3 {
+  font-size: 110%;
+}
+.footer_inner_ul p {
+  font-size: 90%;
+}
+.homepage_border {
+  border: 2px solid gray;
+  border-radius: 30px;
+}
+header a {
+  padding: 20px;
+}
+.section_2 a {
+  background-color: orangered;
+  padding: 20px;
+  border-radius: 30px;
+  margin-right: auto;
+}
