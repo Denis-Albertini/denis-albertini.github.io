@@ -201,3 +201,6 @@ header a {
   border-radius: 30px;
   margin-right: auto;
 }
+.dark_bg {
+  background-color: rgb(24, 24, 24);
+}
