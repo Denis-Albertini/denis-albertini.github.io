@@ -1,7 +1,8 @@
-#section-1 {
+#banner {
   background-image: url(../images/banner.jpg);
   background-size: cover;
-  padding: 6.25em 0;
+  padding-top: 6.25em;
+  padding-bottom: 6.25em;
 }
 #categories {
   padding-top: 4.375em;
@@ -22,7 +23,7 @@
 #services,
 #jobs,
 #estate {
-  padding: 30px 36px;
+  padding: 0.9375em 1.125em;
 }
 #mobiles {
   background-color: red;
