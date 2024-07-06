@@ -1,0 +1,93 @@
+#section-1 {
+  background-image: url(../images/banner.jpg);
+  background-size: cover;
+  padding: 6.25em 0;
+}
+#categories {
+  padding-top: 4.375em;
+  padding-bottom: 4.375em;
+}
+.card-body {
+  height: 13.125em;
+}
+#mobiles,
+#electronics,
+#cars,
+#bikes,
+#furniture,
+#pets,
+#books,
+#fashion,
+#kids,
+#services,
+#jobs,
+#estate {
+  padding: 30px 36px;
+}
+#mobiles {
+  background-color: red;
+}
+#electronics {
+  background-color: goldenrod;
+}
+#cars {
+  background-color: cornflowerblue;
+}
+#bikes {
+  background-color: green;
+}
+#furniture {
+  background-color: maroon;
+}
+#pets {
+  background-color: royalblue;
+}
+#books {
+  background-color: darkviolet;
+}
+#fashion {
+  background-color: cadetblue;
+}
+#kids {
+  background-color: lightseagreen;
+}
+#services {
+  background-color: hotpink;
+}
+#jobs {
+  background-color: black;
+}
+#estate {
+  background-color: chocolate;
+}
+.ad-image {
+  width: 100%;
+}
+#ads {
+  padding-bottom: 4.375em;
+}
+#app {
+  background-color: mediumseagreen;
+  padding: 4.375em 6.25em;
+  padding-bottom: 0;
+}
+#app-store {
+  width: 30%;
+}
+#info {
+  padding: 4.375em 5.625em;
+}
+.list-group-item h3 {
+  color: mediumseagreen;
+}
+.list-group-item h4 {
+  color: mediumseagreen;
+}
+#geo {
+  padding: 6px 7.2px;
+  background-color: mediumseagreen;
+}
+footer {
+  padding-top: 1.875em;
+  padding-bottom: 1.875em;
+}
