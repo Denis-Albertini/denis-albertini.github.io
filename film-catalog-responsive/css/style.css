@@ -1,0 +1,36 @@
+#titleImg {
+  width: 17.25em;
+}
+#genreCast {
+  font-size: small;
+}
+#classind {
+  width: 2.1875em;
+}
+#synopsis {
+  font-size: 0.875em;
+}
+#similarTitle {
+  width: 6.25em;
+}
+.split-color-star {
+  background: -webkit-linear-gradient(
+    to right,
+    rgb(255, 193, 7) 50%,
+    rgba(33, 37, 41, 0.5) 50%
+  );
+  background: linear-gradient(
+    to right,
+    rgb(255, 193, 7) 50%,
+    rgba(33, 37, 41, 0.5) 50%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  display: inline-block;
+}
+@media (min-width: 768px) {
+  #card {
+    height: 34.375em;
+  }
+}
