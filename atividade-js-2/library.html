@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="A responsive book register website for the Web Basics course in the first semester of 2024"
+    />
+    <title>Cadastro de livros</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.js"
+      integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+      crossorigin="anonymous"
+      defer
+    ></script>
+    <script src="js/library.js" defer></script>
+  </head>
+  <body class="bg-secondary-subtle">
+    <div class="container bg-white p-5">
+      <form class="border border-bg-secondary rounded p-5 mb-3">
+        <div class="mb-3">
+          <label for="title" class="form-label">Título</label>
+          <input type="text" class="form-control" id="title" />
+        </div>
+        <div class="mb-3">
+          <label for="description" class="form-label">Descrição</label>
+          <textarea
+            name=""
+            id="description"
+            class="form-control"
+            rows="5"
+          ></textarea>
+        </div>
+        <div class="mb-3">
+          <label for="genre" class="form-label">Gênero(s)</label>
+          <input type="text" class="form-control" id="genre" />
+          <div class="form-text">Separe os gêneros por vírgulas</div>
+        </div>
+        <div class="mb-3">
+          <label for="autors" class="form-label">Autor(es)</label>
+          <input type="text" class="form-control" id="authors" />
+          <div class="form-text">Separe os autores por vírgulas</div>
+        </div>
+        <button type="button" class="btn btn-primary" id="add">
+          Adicionar
+        </button>
+      </form>
+      <table class="table table-striped mb-3 d-none">
+        <thead>
+          <tr>
+            <th scope="col">Título</th>
+            <th scope="col">Descrição</th>
+            <th scope="col">Gêneros</th>
+            <th scope="col">Autores</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+      <div class="d-flex flex-row gap-3">
+        <button type="button" class="btn btn-danger d-none" id="clear">
+          Limpar
+        </button>
+        <button type="button" class="btn btn-success d-none" id="send">
+          Enviar
+        </button>
+      </div>
+    </div>
+  </body>
+</html>
