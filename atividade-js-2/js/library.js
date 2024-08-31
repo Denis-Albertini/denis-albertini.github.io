@@ -62,6 +62,8 @@ function send() {
   $.post("http://httpbin.org/post", books, function (_data, status) {
     if (status == "success") {
       alert(`Conteúdo enviado com sucesso!`);
+    } else {
+      alert(`Erro ao enviar conteúdo!`);
     }
   });
 }
