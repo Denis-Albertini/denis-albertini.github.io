@@ -94,14 +94,20 @@ function clearSelectedProductsList() {
 function loadSelectedProductsList() {
   if (selectedProducts.length > 0) {
     selectedProducts.forEach((product) => {
-      $("#orderList")
-        .append(`<li id='${product.id}' class="list-group-item d-flex justify-content-between align-items-start">
+      if (document.getElementById(`s-${product.id}`) !== null) {
+        $(`#s-${product.id} span`).text(
+          parseInt($(`#s-${product.id} span`).text()) + 1
+        );
+      } else {
+        $("#orderList")
+          .append(`<li id='s-${product.id}' class="list-group-item d-flex justify-content-between align-items-start">
           <div class="ms-2 me-auto">
           <div class="fw-bold">${product.name}</div>
           ${product.category}
           </div>
           <span class="badge text-bg-primary rounded-pill">1</span>
           </li>`);
+      }
     });
     $("#order").removeClass("d-none");
   }
@@ -126,17 +132,22 @@ $(function () {
   loadTotalCost();
 });
 
-$(".p-card").click(function () {
-  let selectedId = this.id;
-  selectedProducts.push(
-    menu.find((product) => {
-      return product.id == selectedId;
-    })
-  );
-  localStorage.setItem("selectedProducts", JSON.stringify(selectedProducts));
-  clearSelectedProductsList();
-  loadSelectedProductsList();
-  loadTotalCost();
+$(".p-card").on({
+  click: function () {
+    let selectedId = this.id;
+    selectedProducts.push(
+      menu.find((product) => {
+        return product.id == selectedId;
+      })
+    );
+    localStorage.setItem("selectedProducts", JSON.stringify(selectedProducts));
+    clearSelectedProductsList();
+    loadSelectedProductsList();
+    loadTotalCost();
+  },
+  mouseenter: function () {
+    $(this).css("cursor", "pointer");
+  },
 });
 
 $("#clear").click(function () {
