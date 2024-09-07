@@ -16,31 +16,35 @@
       crossorigin="anonymous"
     />
     <script
-      src="https://code.jquery.com/jquery-3.7.1.js"
-      integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
       crossorigin="anonymous"
       defer
     ></script>
     <script src="js/coffee-shop.js" defer></script>
   </head>
-  <body>
-    <div class="container">
+  <body class="bg-secondary-subtle">
+    <div class="container bg-white p-5">
       <a href="index.html" class="btn btn-primary mb-3">&#8592; Início</a>
-      <h1>Cafeteria</h1>
-      <ul id="cardapio">
-        <!-- 
-                    seu código deve carregar dinamicamente os itens de menu disponíveis no 
-                    array cardápio 
-                -->
-      </ul>
-      <h2>Pedidos</h2>
-      <ul id="pedidos">
-        <!-- 
-                    quando o usuário clicar em um item de menu, ele deve ser incluído na lista de 
-                    pedidos e o valor total deve ser recalculado 
-                -->
-      </ul>
-      <h2>Total - <span id="valorTotal">0</span></h2>
+      <h1 class="text-center display-6 fw-bold mb-3">Cardápio</h1>
+      <div
+        id="menu"
+        class="row row-cols-2 row-cols-md-4 row-cols-xl-6 border border-secondary-subtle rounded p-3 gy-3 m-0 text-break"
+      ></div>
+      <div id="order" class="d-none">
+        <h1 class="text-center display-6 fw-bold mt-3">Pedido</h1>
+        <div
+          class="row row-cols-1 row-cols-md-2 border border-secondary-subtle rounded p-3"
+        >
+          <div class="col">
+            <ol id="orderList" class="list-group list-group-numbered"></ol>
+            <button id="clear" class="btn btn-danger mt-2">Limpar</button>
+          </div>
+          <div class="col">
+            <h2>Total: $<span id="totalCost"></span></h2>
+          </div>
+        </div>
+      </div>
     </div>
   </body>
 </html>

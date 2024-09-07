@@ -1,77 +1,71 @@
-//função construtora de objetos Produto
-var Produto = function (id, nome, categoria, img, valorUnitario) {
-  this.id = id;
-  this.nome = nome;
-  this.categoria = categoria;
-  this.foto = img;
-  this.valorUnitario = valorUnitario;
-};
-
-function pesquisaPorId(vetor, objId) {
-  return vetor.find(function (item) {
-    return item.id == objId;
-  });
+class Product {
+  constructor(id, name, category, img, price) {
+    this.id = id;
+    this.name = name;
+    this.category = category;
+    this.img = img;
+    this.price = price;
+  }
 }
 
-// carregamento de cardápio de exemplo
-var cardapio = [
-  new Produto(
+const menu = [
+  new Product(
     1,
     "Capuccino",
     "Bebidas Quentes",
     "https://rafaelescalfoni.github.io/desenv_web/img/capuccino.png",
     7
   ),
-  new Produto(
+  new Product(
     2,
     "Espresso",
     "Bebidas Quentes",
     "https://rafaelescalfoni.github.io/desenv_web/img/espresso.png",
     4
   ),
-  new Produto(
+  new Product(
     3,
     "Frapuccino",
     "Bebidas Quentes",
     "https://rafaelescalfoni.github.io/desenv_web/img/frapuccino.png",
     8
   ),
-  new Produto(
+  new Product(
     4,
     "Chococcino",
     "Bebidas Quentes",
     "https://rafaelescalfoni.github.io/desenv_web/img/chococcino.png",
     7
   ),
-  new Produto(
+  new Product(
     5,
     "Chocolate Quente",
     "Bebidas Quentes",
     "https://rafaelescalfoni.github.io/desenv_web/img/chocolate_quente.png",
     10
   ),
-  new Produto(
+  new Product(
     6,
     "Frapê",
     "Bebidas Frias",
     "https://rafaelescalfoni.github.io/desenv_web/img/frape.png",
     12
   ),
-  new Produto(
+  new Product(
     7,
     "Suco de Laranja",
     "Bebidas Frias",
     "https://rafaelescalfoni.github.io/desenv_web/img/suco_laranja.png",
     10
   ),
-  new Produto(
+  new Product(
     8,
     "Açaí",
     "Doces",
     "https://rafaelescalfoni.github.io/desenv_web/img/acai.png",
     12
   ),
-  new Produto(
+  new Product(
     9,
     "Bolo de Laranja",
     "Doces",
@@ -80,35 +74,73 @@ var cardapio = [
   ),
 ];
 
+menu.forEach((product) => {
+  $("#menu").append(`<div class"col">
+    <div id="${product.id}" class="p-card d-flex flex-column border border-black rounded p-2">
+    <h2>${product.name}</h2>
+    <img src="${product.img}" class="img-fluid my-3">
+    <h3>$ ${product.price}</h3>
+    </div>
+    </div>`);
+});
+
+const selectedProducts = [];
+
+function clearSelectedProductsList() {
+  $("#orderList").empty();
+  $("#order").addClass("d-none");
+}
+
+function loadSelectedProductsList() {
+  if (selectedProducts.length > 0) {
+    selectedProducts.forEach((product) => {
+      $("#orderList")
+        .append(`<li id='${product.id}' class="list-group-item d-flex justify-content-between align-items-start">
+          <div class="ms-2 me-auto">
+          <div class="fw-bold">${product.name}</div>
+          ${product.category}
+          </div>
+          <span class="badge text-bg-primary rounded-pill">1</span>
+          </li>`);
+    });
+    $("#order").removeClass("d-none");
+  }
+}
+
+function loadTotalCost() {
+  $("#totalCost").text(
+    selectedProducts.reduce(function (total, product) {
+      return (total += product.price);
+    }, 0)
+  );
+}
+
 $(function () {
-  var produtosEscolhidosArray = [];
-  /* 
-        each é uma função do jQuery que funciona como o foreach do javascript. Tem dois parâmetros: o primeiro é a lista que iremos iterar; o segundo é uma função que será executada a cada laço de iteração. A função tem dois parâmetros - ind, o índice da iteração e item, o objeto recuperado a cada iteração.
-        
-        Nos nomes ind e item podem ser alterados para o nome que for mais interessante, ok?
+  let localyStored = JSON.parse(localStorage.getItem("selectedProducts"));
+  if (localyStored !== null) {
+    localyStored.forEach((product) => {
+      selectedProducts.push(product);
+    });
+  }
+  loadSelectedProductsList();
+  loadTotalCost();
+});
 
-        No exemplo abaixo, eu usei o each para iterar a lista "cardapio". A cada laço, cada elemento é atribuído na variável "item".
-    */
-  $.each(cardapio, function (ind, item) {
-    var itemLista = $("<li>");
-    // setando o item, id e conteúdo
-    itemLista.attr("id", item.id);
-    itemLista.text(item.nome);
-    // adicionando na lista de cardápio
-    $("#cardapio").append(itemLista);
-  });
+$(".p-card").click(function () {
+  let selectedId = this.id;
+  selectedProducts.push(
+    menu.find((product) => {
+      return product.id == selectedId;
+    })
+  );
+  localStorage.setItem("selectedProducts", JSON.stringify(selectedProducts));
+  clearSelectedProductsList();
+  loadSelectedProductsList();
+  loadTotalCost();
+});
 
-  $("#cardapio").on("click", "li", function () {
-    var itemEscolhido = pesquisaPorId(cardapio, $(this).attr("id"));
-    console.log(itemEscolhido);
-    /*
-            Sua atividade
-            - coloque seu código aqui
-            - você deve criar elemento de lista e (re)calcular o total
-        */
-    $("#pedidos").append(`<li>${itemEscolhido.nome}</li>`);
-    $("#valorTotal").text(
-      parseInt($("#valorTotal").text()) + itemEscolhido.valorUnitario
-    );
-  });
+$("#clear").click(function () {
+  localStorage.clear();
+  selectedProducts.length = 0;
+  clearSelectedProductsList();
 });

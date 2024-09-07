@@ -63,7 +63,7 @@ function send() {
     if (status == "success") {
       alert(`Conteúdo enviado com sucesso!`);
     } else {
-      alert(`Erro ao enviar conteúdo!`);
+      alert(`Erro na requisição!`);
     }
   });
 }
@@ -83,7 +83,11 @@ $("#clear").click(function () {
 });
 
 $("#send").click(function () {
-  send();
+  try {
+    send();
+  } catch (error) {
+    alert(error.message);
+  }
   emptyBooks();
   emptyList();
   hideList();
